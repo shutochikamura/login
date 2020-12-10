@@ -1,24 +1,30 @@
-<html>
+@extends('layouts.helloapp')
 
-<head>
+@section('title', 'userName')
 
-</head>
-
-<body>
-    <h1>ユーザー登録画面</h1>
-    @csrf
-    <form action="login" method="post">
+@section('content')
+@csrf
+<form action="login" method="post">
+    <div class="textbox">
         <p name="name">Name:</p>
-        <input name="name" type="text">
-        <p name="usermail">Usermail:</p>
-        <input name="usermail" type="text">
+        <input class="text" name="name" type="text">
+    </div>
+    <div class="textbox">
+        <p name="usermail">E-Mail Address:</p>
+        <input class="text" name="usermail" type="text">
+    </div>
+    <div class="textbox">
         <p name="password">Password:</p>
-        <input name="password" type="password">
+        <input class="text" name="password" type="password">
+    </div>
+    <div class="textbox">
         <p name="password">Comfirm Password:</p>
-        <input name="password" type="password">
-        <input type="submit" value="登録">
-    </form>
-    <a href="login">ログイン画面に戻る</a>
-</body>
+        <input class="text" name="password" type="password">
+    </div>
+    <p>
+        <input class="btn primary" type="submit" value="Register">
+    </p>
+</form>
+<a href="login">ログイン画面に戻る</a>
 
-</html>
+@endsection
