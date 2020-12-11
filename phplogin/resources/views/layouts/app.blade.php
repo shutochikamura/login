@@ -9,21 +9,55 @@
             width: auto;
             -webkit-text-size-adjust: 100%;
             text-align: center;
-
         }
 
         header {
-            background-color: ;
+
             border: groove;
             width: 100%;
+            height: 110px;
 
-            height: ;
         }
 
+        a {
+            font-size: 20px;
+            color: gray;
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            opacity: 0.7;
+            transition: 0.5s;
+
+        }
+
+        .header-navi {
+            text-align: left;
+            margin: 5pt 10pt;
+
+        }
+
+        .header-sub {
+
+            text-align: right;
+
+
+
+        }
+
+        .header-submenu {
+            padding: 5px;
+
+        }
+
+
+
         .main {
-            padding: 0 4%;
+            padding: 80px 4%;
             width: 380px;
             display: inline-table;
+
 
         }
 
@@ -85,12 +119,18 @@
 
 <body>
     <header>
-        <div>
-            <h2>Laravel</h3>
+        <div class="header-navi">
+            <h2>Laravel</h2>
         </div>
-        <div>
-            <a href="login">Login</a>
-            <a>Register</a>
+
+        <div class="header-sub">
+
+            <a class="header-submenu" href="login">Login</a>
+
+            <a class="header-submenu" href="register">Register</a>
+
+
+
         </div>
     </header>
     <div class="main">
