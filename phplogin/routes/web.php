@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('login', '\App\Http\Controllers\loginController@index');
-Route::get('userName', '\App\Http\Controllers\loginController@user');
+Route::get('register', '\App\Http\Controllers\loginController@user');

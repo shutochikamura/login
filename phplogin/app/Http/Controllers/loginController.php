@@ -15,6 +15,6 @@ class loginController extends Controller
     public function user()
     {
 
-        return view('login.userName');
+        return view('login.register');
     }
 }

@@ -9,6 +9,15 @@
             width: auto;
             -webkit-text-size-adjust: 100%;
             text-align: center;
+
+        }
+
+        header {
+            background-color: ;
+            border: groove;
+            width: 100%;
+
+            height: ;
         }
 
         .main {
@@ -75,6 +84,15 @@
 </head>
 
 <body>
+    <header>
+        <div>
+            <h2>Laravel</h3>
+        </div>
+        <div>
+            <a href="login">Login</a>
+            <a>Register</a>
+        </div>
+    </header>
     <div class="main">
 
         <div>

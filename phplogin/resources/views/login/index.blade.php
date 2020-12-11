@@ -1,4 +1,4 @@
-@extends('layouts.helloapp')
+@extends('layouts.app')
 
 @section('title', 'login')
 
@@ -18,5 +18,5 @@
     <p class=""><input class="btn primary" type="submit" value="login"></p>
 
 </form>
-<a href="userName">Forgot your password?</a>
+<a href="register">Forgot your password?</a>
 @endsection
