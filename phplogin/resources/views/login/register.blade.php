@@ -1,6 +1,6 @@
-@extends('layouts.helloapp')
+@extends('layouts.app')
 
-@section('title', 'userName')
+@section('title', 'register')
 
 @section('content')
 @csrf
