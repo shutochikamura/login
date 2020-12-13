@@ -21,5 +21,5 @@ Route::post('login', '\App\Http\Controllers\loginController@post');
 Route::get('register', '\App\Http\Controllers\loginController@register');
 Route::post('register', '\App\Http\Controllers\loginController@register_post');
 
-Route::get('home', 'App\Http\Controllers\loginController@home');
-Route::post('home', 'App\Http\Controllers\loginController@home');
+Route::get('home', 'App\Http\Controllers\homeController@home');
+Route::post('home', 'App\Http\Controllers\homeController@home');

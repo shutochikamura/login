@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<p>{{$msg}}</p>
+
 @if (count($errors) > 0)
 <div>
     <ul>
@@ -26,15 +26,15 @@
         <input class="text" name="name" type="text" value="{{old('name')}}">
     </div>
     <div class="textbox">
-        <p name="usermail">E-Mail Address:</p>
-        <input class="text" name="usermail" type="text" value="{{old('usermail')}}">
+        <p name="mail">E-Mail Address:</p>
+        <input class="text" name="mail" type="text" value="{{old('mail')}}">
     </div>
     <div class="textbox">
         <p name="password">Password:</p>
         <input class="text" name="password" type="password">
     </div>
     <div class="textbox">
-        <p name="password_confirm">Comfirm Password:</p>
+        <p name="password_confirm">Confirm Password:</p>
         <input class="text" name="password_confirm" type="password">
     </div>
     <p>

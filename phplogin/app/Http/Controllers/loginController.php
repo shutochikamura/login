@@ -6,21 +6,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests\loginRequest;
 use Validator;
 
+
+
 class loginController extends Controller
 {
     public function index()
     {
 
-        return view('login.index', ['msg' => 'フォームを入力：']);
+        return view('login.index',);
     }
+
     public function post(Request $request)
     {
         $rules = [
-            'usermail' => 'email',
+            'mail' => 'email',
             'password' => 'required|min:7',
         ];
         $messages = [
-            'usermail.email' => 'メールアドレスが必要です。',
+            'mail.email' => 'メールアドレスが必要です。',
             'password.required' => 'パスワードを整数で記入ください。',
             'password.min' => 'パスワードは7文字以上で記入ください。',
         ];
@@ -30,8 +33,7 @@ class loginController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        return view('home.home', ['msg' => '田中']);
+        return view('home.home', ['msg' => 'name']);
     }
 
     public function register()
@@ -39,15 +41,29 @@ class loginController extends Controller
 
         return view('login.register', ['msg' => 'フォームを入力：']);
     }
-    public function register_post(loginRequest $request)
+
+    public function register_post(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'password' => 'required|min:7',
+            'password_confirm' => 'same:password',
+        ];
+        $messages = [
+            'name.required' => 'お名前を入力下さい。',
+            'mail.email' => 'メールアドレスが必要です。',
+            'password.required' => 'パスワードは整数で記入ください。',
+            'password.min' => 'パスワードは7文字以上で入力してください。',
+            'password_confirm.same' => '同じパスワードを入力してください。'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            return redirect('/register')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
-        return view('login.register', ['msg' => '正しく入力されました。']);
-    }
-
-    public function home()
-    {
-
-        return view('home.home');
+        return view('home.home', ['msg' => $request->name]);
     }
 }

@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<p>{{$msg}}</p>
+
 @if (count($errors) > 0)
 <div>
     <ul>
@@ -22,8 +22,8 @@
 <form action="login" method="post">
     @csrf
     <div class=textbox>
-        <p name="usermail">E-Mail Address:</p>
-        <input class="text" name="usermail" type="text" value="{{old('usermail')}}">
+        <p name="mail">E-Mail Address:</p>
+        <input class="text" name="mail" type="text" value="{{old('mail')}}">
     </div>
     <div class="textbox">
         <p name="password">password:</p>

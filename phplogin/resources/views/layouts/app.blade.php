@@ -26,6 +26,11 @@
             border: groove;
             width: 100%;
             height: 110px;
+            position: fixed;
+            z-index: 9999;
+            top: 5;
+            left: 0;
+            background-color: white;
         }
 
         .header-navi {
@@ -48,7 +53,7 @@
             width: 80px;
             display: block;
             margin-bottom: 1px;
-            padding: 5px;
+            padding: 5px 50px 5px 30px;
             cursor: pointer;
             float: right;
             font-size: 17pt;
@@ -85,12 +90,12 @@
             visibility: visible;
 
             line-height: 40%;
-            background-color: lightgray;
+            background-color: white;
         }
 
 
         .main {
-            padding: 80px 4%;
+            padding: 160px 4%;
             width: 380px;
             display: inline-table;
         }
