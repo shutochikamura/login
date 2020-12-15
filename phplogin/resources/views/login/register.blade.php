@@ -19,6 +19,8 @@
     </ul>
 </div>
 @endif
+
+
 <form action="register" method="post">
     @csrf
     <div class="textbox">
