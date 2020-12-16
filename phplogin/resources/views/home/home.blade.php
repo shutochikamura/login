@@ -6,7 +6,7 @@
 
 
 <input type="checkbox" id="menu-bar" class="accordion">
-<label class="menu-label" for="menu-bar">name</label>
+<label class="menu-label" for="menu-bar">{{$msg}}</label>
 <div class="header-sub-menu">
 
     <a href="login">
