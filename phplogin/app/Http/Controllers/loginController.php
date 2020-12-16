@@ -30,6 +30,6 @@ class loginController extends Controller
     public function post(loginRequest $request)
     {
 
-        return view('home.home', ['msg' => $request->name]);
+        return view('home.home', ['name' => $request->name]);
     }
 }
