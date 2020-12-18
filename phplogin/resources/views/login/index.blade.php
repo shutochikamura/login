@@ -2,13 +2,28 @@
 
 @section('title', 'login')
 
-@section('content')
-@csrf
+@section('header')
+<a class="header-login-menu" href="login">Login</a>
 
+<a class="header-login-menu" href="register">Register</a>
+@endsection
+
+@section('content')
+
+@if (count($errors) > 0)
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <form action="login" method="post">
+    @csrf
     <div class=textbox>
-        <p name="usermail">E-Mail Address:</p>
-        <input class="text" name="usermail" type="text">
+        <p name="mail">E-Mail Address:</p>
+        <input class="text" name="mail" type="text" value="{{old('mail')}}">
     </div>
     <div class="textbox">
         <p name="password">password:</p>

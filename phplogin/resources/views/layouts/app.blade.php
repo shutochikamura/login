@@ -11,54 +11,93 @@
             text-align: center;
         }
 
-        header {
-
-            border: groove;
-            width: 100%;
-            height: 110px;
-
-        }
-
         a {
             font-size: 20px;
             color: gray;
             text-decoration: none;
-
         }
 
         a:hover {
             opacity: 0.7;
             transition: 0.5s;
+        }
 
+        header {
+            border: groove;
+            width: 100%;
+            height: 110px;
+            position: fixed;
+            z-index: 9999;
+            top: 5;
+            left: 0;
+            background-color: white;
         }
 
         .header-navi {
-            text-align: left;
+            float: left;
             margin: 5pt 10pt;
-
+            display: block;
         }
 
-        .header-sub {
-
+        .header-menu {
             text-align: right;
-
-
-
         }
 
-        .header-submenu {
-            padding: 5px;
-
+        .header-login-menu {
+            margin-top: 40px;
+            padding: 10px;
         }
 
+        /*ホーム画面*/
+        .menu-label {
+            width: 80px;
+            display: block;
+            margin-bottom: 1px;
+            padding: 5px 50px 5px 30px;
+            cursor: pointer;
+            float: right;
+            font-size: 17pt;
+        }
+
+        .menu-label:hover {
+            border: groove;
+            transition: 0.2s;
+        }
+
+        .accordion {
+            display: none;
+        }
+
+        .header-sub-menu {
+            border: 1px solid darkgray;
+            padding: 0 10px;
+            float: right;
+            margin-top: 50px;
+            height: 0;
+            opacity: 0;
+            transition: .5s;
+            visibility: hidden;
+        }
+
+        .header-sub-menu p {
+            color: black;
+        }
+
+        .accordion:checked+.menu-label+.header-sub-menu {
+            height: 40px;
+            opacity: 1;
+            padding: 10px;
+            visibility: visible;
+
+            line-height: 40%;
+            background-color: white;
+        }
 
 
         .main {
-            padding: 80px 4%;
+            padding: 160px 4%;
             width: 380px;
             display: inline-table;
-
-
         }
 
         h1 {
@@ -83,13 +122,11 @@
             text-align: center;
             margin-bottom: 0%;
             width: auto;
-
         }
 
         .textbox {
             display: inline-block;
             padding: 0 5px 5px 5px;
-
         }
 
         .text {
@@ -122,15 +159,8 @@
         <div class="header-navi">
             <h2>Laravel</h2>
         </div>
-
-        <div class="header-sub">
-
-            <a class="header-submenu" href="login">Login</a>
-
-            <a class="header-submenu" href="register">Register</a>
-
-
-
+        <div class="header-menu">
+            @yield('header')
         </div>
     </header>
     <div class="main">
